@@ -77,9 +77,9 @@ define(function (require) {
 		// this seems close enough to ensure that instanceof works.
 		// a RegExp will pass as a valid prototype, but I am not sure
 		// this is a bad thing even if it is unusual.
-		// IMPORTANT: since promises *are* objects, the check for isPromise
+		// IMPORTANT: since promises *are* objects, the check for isPromiseLike
 		// must come first in the OR
-		return obj && (when.isPromise(obj) || Object.prototype.toString.call(obj) == '[object Object]');
+		return obj && (when.isPromiseLike(obj) || Object.prototype.toString.call(obj) == '[object Object]');
 	};
 
 	return ObjectAdapter;
